@@ -1,6 +1,6 @@
 <?php
 /**
- * Movie（映画）は単なるデータ保持用クラス
+ * Movie（映画）は単なるデータ保持用クラス.
  */
 class Movie
 {
@@ -25,6 +25,8 @@ class Movie
     public function setPriceCode($arg)
     {
         $this->_priceCode = $arg;
+
+        return $this;
     }
 
     public function getTitle()
