@@ -30,9 +30,6 @@ class Customer
         $result = 'Rental Record for '.$this->getName().'¥n';
 
         foreach ($this->_rentals as $rental) {
-            $thisAmount = 0;
-            $thisAmount = $rental->getCharge();
-
             // レンタルポイントを加算
             ++$frequentRenterPoints;
             // 新作を二日以上借りた場合はボーナスポイント
@@ -42,8 +39,8 @@ class Customer
             }
 
             // この貸し出しに関する数値の表示
-            $result .= '¥t'.$movie->getTitle().'¥t'.$thisAmount.'¥n';
-            $totalAmount += $thisAmount;
+            $result .= '¥t'.$movie->getTitle().'¥t'.$rental->getCharge().'¥n';
+            $totalAmount += $rental->getCharge();
         }
 
         // フッタ部分の追加
